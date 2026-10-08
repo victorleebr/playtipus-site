@@ -235,13 +235,22 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
 /* ---------- Footer ---------- */
 
 .footer {
-  background: var(--night) url("../img/footer-night.png") repeat-x center top;
+  background: var(--night);
   color: var(--cream);
-  padding: 264px 0 32px;
+  padding: 0 0 32px;
   text-align: center;
   font-size: .95rem;
 }
-.footer a { color: var(--sand); }
+.footer-scene {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  object-fit: cover;
+  object-position: center 15%;
+  margin-bottom: 32px;
+}
+.footer a { color: var(--sand); overflow-wrap: anywhere; }
 .footer p { margin: 0 0 .6em; }
 .footer .small { opacity: .7; font-size: .85rem; }
 .ai-note { max-width: 60ch; margin-left: auto !important; margin-right: auto !important; opacity: .85; }
