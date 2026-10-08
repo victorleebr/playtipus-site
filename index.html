@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playtipus: breed odd little pets on your Windows taskbar</title>
+  <meta name="description" content="Playtipus is a cozy pixel-art idle game that lives on your Windows taskbar. Breed hybrid pets with hidden genes, race and train them, and send them on expeditions.">
+  <link rel="canonical" href="https://playtipusgame.com/">
+  <meta name="theme-color" content="#78a0c8">
+
+  <!-- Sharing preview (Discord, X, Slack, iMessage...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Playtipus">
+  <meta property="og:url" content="https://playtipusgame.com/">
+  <meta property="og:title" content="Playtipus">
+  <meta property="og:description" content="Breed odd little hybrid pets on your Windows taskbar. A cozy pixel-art idle game.">
+  <meta property="og:image" content="https://playtipusgame.com/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Playtipus farm with a river, a lighthouse and the Playtipus logo">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preload" href="/fonts/pixelify-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <h1 class="logo">Playtipus</h1>
+      <!-- EDIT: the one-line pitch -->
+      <p class="pitch">Breed odd little hybrid pets on your Windows taskbar.</p>
+
+      <figure class="hero-shot frame">
+        <!-- EDIT: hero GIF. Replace img/hero.gif (keep width/height in sync) -->
+        <img src="/img/hero.gif" width="440" height="246"
+             alt="The Playtipus farm docked along the Windows taskbar, panning from day to night">
+      </figure>
+
+      <div class="cta">
+        <a class="btn" href="#signup">Get notified</a>
+        <!-- EDIT: Steam button. Put the store link in href and delete the word "hidden" -->
+        <a class="btn btn-steam" data-steam href="#" hidden>Wishlist on Steam</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="features wrap" aria-labelledby="features-title">
+      <h2 id="features-title">A tiny farm that lives on your desktop</h2>
+
+      <article class="feature">
+        <img src="/img/feature-breeding.gif" width="480" height="270" loading="lazy"
+             alt="Two pets being bred into a new hybrid">
+        <div class="feature-text">
+          <h3>Hybrid breeding</h3>
+          <p>Every pet is built from six body parts, and each one carries hidden genes. Pair two pets and see what hatches: maybe a fox tail on a striped snout, maybe something nobody has seen yet.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <img src="/img/feature-farm.png" width="440" height="246" loading="lazy"
+             alt="The farm at night, with lit windows in the farmhouse">
+        <div class="feature-text">
+          <h3>A farm on your taskbar</h3>
+          <p>Playtipus docks along the bottom of your screen while you work. Pets wander, sleep and get up to things. Peek in whenever you like, or just let them be.</p>
+        </div>
+      </article>
+
+      <article class="feature feature-wide">
+        <img src="/img/feature-expeditions.gif" width="640" height="70" loading="lazy"
+             alt="A party of four pets walking along the taskbar on an expedition">
+        <div class="feature-text">
+          <h3>Expeditions</h3>
+          <p>Pick a party and send it walking along the taskbar. They come home with loot, stories and, now and then, a strange egg.</p>
+        </div>
+      </article>
+
+      <article class="feature">
+        <img src="/img/feature-coats.gif" width="480" height="270" loading="lazy"
+             alt="A pet trying on different coats">
+        <div class="feature-text">
+          <h3>Coats</h3>
+          <p>Patterns, colours and the occasional ridiculous pair of stripes. Breed for the look you want, then show them off.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="signup" class="signup-section" aria-labelledby="signup-title">
+      <div class="wrap panel">
+        <h2 id="signup-title">Hear when it hatches</h2>
+        <p>Leave your email and we'll write when there's news: playtests, the Steam page and launch. That's all.</p>
+
+        <!-- EDIT: email provider. Set action="..." to the provider's form URL (see README) -->
+        <form class="signup" action="" method="post" data-signup novalidate>
+          <label class="visually-hidden" for="email">Email address</label>
+          <input id="email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+          <!-- spam trap: real people never see or fill this -->
+          <input class="visually-hidden" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn" type="submit">Notify me</button>
+        </form>
+        <p class="form-status" role="status" aria-live="polite" data-status></p>
+
+        <a class="btn btn-steam" data-steam href="#" hidden>Wishlist on Steam</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <!-- EDIT: contact email -->
+      <p>Contact: <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></p>
+      <!-- EDIT: AI disclosure -->
+      <p class="ai-note">AI_DISCLOSURE_TEXT</p>
+      <p class="small">&copy; <span data-year>2026</span> Playtipus</p>
+    </div>
+  </footer>
+
+</body>
+</html>
