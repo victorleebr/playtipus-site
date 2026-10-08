@@ -19,9 +19,9 @@ Open `index.html` and edit the words between the tags. Everything you are likely
 
 - **Pitch:** the line under the logo.
 - **Features:** each `<article class="feature">` block has an `<h3>` title and a `<p>` paragraph.
-- **Steam button:** there are two (hero and sign-up box). In each one, put the store URL in `href="..."` and delete the word `hidden`.
-- **Contact email:** replace both copies of `CONTACT_EMAIL` in the footer.
-- **AI disclosure:** replace `AI_DISCLOSURE_TEXT` in the footer.
+- **Steam button:** hidden until the store page exists. There are two (hero and sign-up box). In each one, put the store URL in `href="..."` and delete the word `hidden`.
+- **Contact email:** the `mailto:` link in the footer (it appears twice on that line).
+- **AI disclosure:** commented out in the footer for now. Write the text and remove the `<!--` and `-->` around that line.
 - **Sharing preview:** the `og:title` and `og:description` lines in `<head>`. Discord and X cache previews, so changes can take a while to show up there.
 
 To preview locally, run `python -m http.server 8000` in this folder and open <http://localhost:8000>. Opening the file by double-clicking won't work, because the paths start with `/`.
