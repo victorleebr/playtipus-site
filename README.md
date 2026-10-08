@@ -37,8 +37,9 @@ Pixel art rules: export at 1x game pixels, or a clean whole-number multiple. Nev
 | `img/hero-farm.mp4` + `hero-farm-poster.jpg` | The farm, panning to the race track (15 s loop) | 960 x 404 | Done (from `full_farm_video_long.mp4`) |
 | `img/taskbar.mp4` + `taskbar-poster.jpg` | The real Windows taskbar with an expedition walking along it, full width under the hero | 1916 x 90 | Done (from `videoexpeditionaskbar.mp4`) |
 | `img/feature-expeditions.mp4` + poster | Close-up of a pet walking above the search box | 516 x 348 (3x) | Done (from `walking_expedition.mp4`) |
-| `img/feature-breeding.gif` | Two parents, then the egg or hatch, then the hybrid with mixed parts | **480 x 270**, 1x game pixels | Placeholder |
-| `img/feature-farm.png` | The collapsed farm strip | 440 x 246, 1x | Done (night strip) |
+| `img/feature-hatching.mp4` + poster | An egg hatching into a new hybrid (Hybrid breeding) | 494 x 562 | Done (from `egg_hatching_video.mp4`) |
+| `img/feature-family-tree.mp4` + poster | A pet's family tree and DNA helix (Family trees) | 858 x 602 | Done (from `family_tree_video.mp4`) |
+| `img/feature-farm-night.mp4` + poster | The farm at night, pets wandering | 956 x 222 | Done (from `chill_farm_video_night.mp4`) |
 | `img/feature-coats.gif` | A pet cycling through coats | **480 x 270**, 1x | Placeholder (coats aren't in the game yet) |
 | `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` | The game icon | Send a **32 x 32** transparent PNG; **180 x 180** for the Apple icon | Temporary: a striped pet cropped from an expedition GIF |
 | `img/og-image.png` | The preview card on Discord, X, Slack | 1200 x 630 PNG | Done (farm banner and logo) |

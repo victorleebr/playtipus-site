@@ -183,6 +183,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
   box-shadow: var(--edge) var(--edge) 0 var(--ink);
   background: var(--night);
 }
+.feature .portrait { max-width: 340px; justify-self: center; }
 .feature p { margin: 0; color: var(--ink-soft); }
 
 @media (min-width: 760px) {
