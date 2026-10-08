@@ -43,7 +43,8 @@ Pixel art rules: export at 1x game pixels, or a clean whole-number multiple. Nev
 | `img/feature-coats.png` | One pet in six coats, then six hybrids, in a 3-column grid | 708 x 672 | Done (from `Coat_Example1.png` and `Coat_Example_Hybrid.png`) |
 | `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` | The game icon | Send a **32 x 32** transparent PNG; **180 x 180** for the Apple icon | Temporary: a striped pet cropped from an expedition GIF |
 | `img/og-image.png` | The preview card on Discord, X, Slack | 1200 x 630 PNG | Done (farm banner and logo) |
-| `img/footer-day.mp4` + poster | The farm on a sunny day, full width above the footer (cropped to 440 px tall on wide screens) | 1280 x 586 | Done (from `chill_farm_video_day.mp4`, sidebar icons cropped off) |
+| `img/footer-farm-day.mp4` + poster | The farm on a sunny day, full width above the footer | 1280 x 312 | Done (from `chill_farm_video_day_long_chopped.mp4`) |
+| `img/platypus-pet.mp4` + poster | A platypus being petted, shown small at the top of the sign-up box | 320 x 294 (shown at 200 px) | Done (from `gif_icon.mp4`) |
 
 Videos are MP4 (H.264, no sound) because they are many times smaller than GIFs. To make one from a recording, with [ffmpeg](https://ffmpeg.org):
 

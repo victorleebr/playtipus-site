@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <link rel="preload" href="fonts/pixelify-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -114,6 +114,10 @@
 
     <section id="signup" class="signup-section" aria-labelledby="signup-title">
       <div class="wrap panel">
+        <!-- EDIT: the platypus being petted. Replace img/platypus-pet.mp4 and its poster -->
+        <video class="mascot" src="img/platypus-pet.mp4" poster="img/platypus-pet-poster.jpg" width="320" height="294"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="A platypus getting a pat, with a little heart popping up"></video>
         <h2 id="signup-title">Hear when it hatches</h2>
         <p>Leave your email and we'll write when there's news: playtests, the Steam page and launch. That's all.</p>
 
@@ -133,8 +137,8 @@
   </main>
 
   <footer class="footer">
-    <!-- EDIT: footer scene. Replace img/footer-day.mp4 and its poster (keep width/height in sync) -->
-    <video class="footer-scene" src="img/footer-day.mp4" poster="img/footer-day-poster.jpg" width="1280" height="586"
+    <!-- EDIT: footer scene. Replace img/footer-farm-day.mp4 and its poster (keep width/height in sync) -->
+    <video class="footer-scene" src="img/footer-farm-day.mp4" poster="img/footer-farm-day-poster.jpg" width="1280" height="312"
            autoplay muted loop playsinline preload="metadata"
            aria-label="The farm on a sunny day: a river, a big oak tree and a windmill on the hill"></video>
     <div class="wrap">

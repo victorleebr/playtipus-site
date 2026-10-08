@@ -209,6 +209,12 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
   text-align: center;
 }
 .panel p { margin: 0 0 1.2em; }
+.mascot {
+  width: 200px;
+  margin: 0 auto 20px;
+  border: var(--edge) solid var(--ink);
+  box-shadow: var(--edge) var(--edge) 0 var(--ink);
+}
 
 .signup {
   display: flex;
@@ -247,7 +253,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
   height: auto;
   max-height: 440px;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center top;
   margin-bottom: 32px;
 }
 .footer a { color: var(--sand); overflow-wrap: anywhere; }
