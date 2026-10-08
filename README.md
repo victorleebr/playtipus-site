@@ -10,7 +10,7 @@ js/main.js            sign-up form messages, footer year
 img/                  hero, feature images, share image
 fonts/                Pixelify Sans (pixel headings, OFL licence)
 favicon.ico, favicon-32.png, apple-touch-icon.png
-CNAME                 the custom domain for GitHub Pages (do not delete)
+CNAME                 the custom domain for GitHub Pages (added back once DNS is set up)
 ```
 
 ## Changing the text
@@ -24,7 +24,7 @@ Open `index.html` and edit the words between the tags. Everything you are likely
 - **AI disclosure:** commented out in the footer for now. Write the text and remove the `<!--` and `-->` around that line.
 - **Sharing preview:** the `og:title` and `og:description` lines in `<head>`. Discord and X cache previews, so changes can take a while to show up there.
 
-To preview locally, run `python -m http.server 8000` in this folder and open <http://localhost:8000>. Opening the file by double-clicking won't work, because the paths start with `/`.
+To preview locally, open `index.html` in a browser, or run `python -m http.server 8000` in this folder and open <http://localhost:8000>.
 
 ## Changing images
 

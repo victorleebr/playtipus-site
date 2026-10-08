@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Pixelify Sans";
-  src: url("/fonts/pixelify-sans.woff2") format("woff2");
+  src: url("../fonts/pixelify-sans.woff2") format("woff2");
   font-weight: 400 700;
   font-display: swap;
 }
@@ -234,7 +234,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
 /* ---------- Footer ---------- */
 
 .footer {
-  background: var(--night) url("/img/footer-night.png") repeat-x center top;
+  background: var(--night) url("../img/footer-night.png") repeat-x center top;
   color: var(--cream);
   padding: 264px 0 32px;
   text-align: center;
