@@ -40,7 +40,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-img {
+img, video {
   display: block;
   max-width: 100%;
   height: auto;
@@ -90,7 +90,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
 
 .hero {
   background: linear-gradient(var(--sky) 0 70%, var(--grass) 70% 100%);
-  padding: 48px 0 56px;
+  padding: 48px 0 0;
   text-align: center;
 }
 
@@ -114,9 +114,9 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
 .hero-shot {
   margin: 0 auto;
   width: 100%;
-  max-width: calc(880px + 2 * var(--edge)); /* the 440px GIF at exactly 2x */
+  max-width: calc(960px + 2 * var(--edge));
 }
-.hero-shot img { width: 100%; }
+.hero-shot video { width: 100%; }
 
 .cta {
   display: flex;
@@ -125,6 +125,24 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
   justify-content: center;
   margin-top: 32px;
 }
+
+.taskbar-note {
+  font-family: var(--pixel);
+  font-size: 1.1rem;
+  margin: 40px 0 12px;
+}
+
+/* Real taskbar recording: full width, never scaled up; on narrow screens
+   the sides are cropped, keeping the Start button, search box and first pet. */
+.taskbar {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  object-position: 30% 50%;
+  background: #2a1d2a;
+  border-top: var(--edge) solid var(--ink);
+}
+@media (min-width: 1916px) { .taskbar { object-fit: contain; } }
 
 /* ---------- Buttons ---------- */
 
@@ -159,7 +177,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
   align-items: center;
   margin-bottom: 56px;
 }
-.feature img {
+.feature img, .feature video {
   width: 100%;
   border: var(--edge) solid var(--ink);
   box-shadow: var(--edge) var(--edge) 0 var(--ink);
@@ -169,10 +187,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
 
 @media (min-width: 760px) {
   .feature { grid-template-columns: 1fr 1fr; }
-  .feature:nth-of-type(even) img { order: 2; }
-  .feature-wide { grid-template-columns: 1fr; }
-  .feature-wide img { order: 0 !important; }
-  .feature-wide .feature-text { max-width: 60ch; margin: 0 auto; text-align: center; }
+  .feature:nth-of-type(even) :is(img, video) { order: 2; }
 }
 
 /* ---------- Sign-up ---------- */

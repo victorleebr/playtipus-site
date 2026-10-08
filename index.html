@@ -37,9 +37,10 @@
       <p class="pitch">Breed odd little hybrid pets on your Windows taskbar.</p>
 
       <figure class="hero-shot frame">
-        <!-- EDIT: hero GIF. Replace img/hero.gif (keep width/height in sync) -->
-        <img src="/img/hero.gif" width="440" height="246"
-             alt="The Playtipus farm docked along the Windows taskbar, panning from day to night">
+        <!-- EDIT: hero video. Replace img/hero-farm.mp4 and its poster (keep width/height in sync) -->
+        <video src="/img/hero-farm.mp4" poster="/img/hero-farm-poster.jpg" width="960" height="404"
+               autoplay muted loop playsinline preload="auto"
+               aria-label="The Playtipus farm at night: houses, a river, pets wandering, and the race track"></video>
       </figure>
 
       <div class="cta">
@@ -47,7 +48,14 @@
         <!-- EDIT: Steam button. Put the store link in href and delete the word "hidden" -->
         <a class="btn btn-steam" data-steam href="#" hidden>Wishlist on Steam</a>
       </div>
+
+      <p class="taskbar-note">It lives down here, on your taskbar:</p>
     </div>
+
+    <!-- EDIT: real taskbar recording. Replace img/taskbar.mp4 and its poster -->
+    <video class="taskbar" src="/img/taskbar.mp4" poster="/img/taskbar-poster.jpg" width="1916" height="90"
+           autoplay muted loop playsinline preload="auto"
+           aria-label="A Windows taskbar with Playtipus pets walking along the top edge on an expedition"></video>
   </header>
 
   <main>
@@ -72,12 +80,13 @@
         </div>
       </article>
 
-      <article class="feature feature-wide">
-        <img src="/img/feature-expeditions.gif" width="640" height="70" loading="lazy"
-             alt="A party of four pets walking along the taskbar on an expedition">
+      <article class="feature">
+        <video src="/img/feature-expeditions.mp4" poster="/img/feature-expeditions-poster.png" width="516" height="348"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="A pet on an expedition walking along the taskbar, just above the Windows search box"></video>
         <div class="feature-text">
           <h3>Expeditions</h3>
-          <p>Pick a party and send it walking along the taskbar. They come home with loot, stories and, now and then, a strange egg.</p>
+          <p>Pick a party and send them off along the taskbar, right past your open apps. Keep working; they'll keep walking.</p>
         </div>
       </article>
 
@@ -96,12 +105,12 @@
         <h2 id="signup-title">Hear when it hatches</h2>
         <p>Leave your email and we'll write when there's news: playtests, the Steam page and launch. That's all.</p>
 
-        <!-- EDIT: email provider. Set action="..." to the provider's form URL (see README) -->
-        <form class="signup" action="" method="post" data-signup novalidate>
+        <!-- Email sign-up: posts to Buttondown (newsletter "playtipusgame"), which handles CAPTCHA and the confirm email -->
+        <form class="signup" action="https://buttondown.com/api/emails/embed-subscribe/playtipusgame"
+              method="post" target="_blank" data-signup novalidate>
+          <input type="hidden" name="embed" value="1">
           <label class="visually-hidden" for="email">Email address</label>
           <input id="email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-          <!-- spam trap: real people never see or fill this -->
-          <input class="visually-hidden" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="btn" type="submit">Notify me</button>
         </form>
         <p class="form-status" role="status" aria-live="polite" data-status></p>

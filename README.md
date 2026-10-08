@@ -28,24 +28,34 @@ To preview locally, run `python -m http.server 8000` in this folder and open <ht
 
 ## Changing images
 
-Replace a file in `img/`, keeping the same name. If the new image has a different size, update `width="..."` and `height="..."` on its `<img>` tag in `index.html`. The page scales images itself, so these numbers only reserve space and keep the layout from jumping.
+Replace a file in `img/`, keeping the same name. If the new image or video has a different size, update `width="..."` and `height="..."` on its `<img>` or `<video>` tag in `index.html`. The page scales images itself, so these numbers only reserve space and keep the layout from jumping.
 
 Pixel art rules: export at 1x game pixels, or a clean whole-number multiple. Never smooth-scale. The CSS keeps edges crisp. Try to keep each GIF under about 2 MB, since mobile visitors download it.
 
 | File | What it shows | Size | Status |
 |---|---|---|---|
-| `img/hero.gif` | The farm docked on a **real Windows taskbar**, with the Start button and a few app icons visible, so people instantly see where the game lives. A loop of 8 to 15 s. | **880 x 400** screen pixels (any height from 250 to 500 works), under 3 MB | Placeholder: the farm strip without the taskbar (440 x 246, shown at 2x) |
+| `img/hero-farm.mp4` + `hero-farm-poster.jpg` | The farm, panning to the race track (15 s loop) | 960 x 404 | Done (from `full_farm_video_long.mp4`) |
+| `img/taskbar.mp4` + `taskbar-poster.jpg` | The real Windows taskbar with an expedition walking along it, full width under the hero | 1916 x 90 | Done (from `videoexpeditionaskbar.mp4`) |
+| `img/feature-expeditions.mp4` + poster | Close-up of a pet walking above the search box | 516 x 348 (3x) | Done (from `walking_expedition.mp4`) |
 | `img/feature-breeding.gif` | Two parents, then the egg or hatch, then the hybrid with mixed parts | **480 x 270**, 1x game pixels | Placeholder |
-| `img/feature-farm.png` | The farm strip (a still or a short GIF) | **440 x 246**, 1x | Done (night strip). Rename it if you swap in a GIF |
-| `img/feature-expeditions.gif` | A party walking the expedition band | **640 x 70**, 1x | Done (downscaled from the 1280 x 140 recording) |
-| `img/feature-coats.gif` | A pet cycling through coats | **480 x 270**, 1x | Placeholder (coats aren't in the game yet; the race GIF could stand in once it's re-recorded without the debug bar) |
-| `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` | The game icon | Send a **32 x 32** (plus 16 x 16 if you have one) transparent PNG; **180 x 180** for the Apple icon | Temporary: a striped pet cropped from the expedition GIF |
-| `img/og-image.png` | The preview card on Discord, X, Slack | **1200 x 630** PNG | Done (farm banner and logo) |
-| `img/footer-night.png` | The night scenery strip above the footer | 2280 x 240 | Done (from the night banner) |
+| `img/feature-farm.png` | The collapsed farm strip | 440 x 246, 1x | Done (night strip) |
+| `img/feature-coats.gif` | A pet cycling through coats | **480 x 270**, 1x | Placeholder (coats aren't in the game yet) |
+| `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` | The game icon | Send a **32 x 32** transparent PNG; **180 x 180** for the Apple icon | Temporary: a striped pet cropped from an expedition GIF |
+| `img/og-image.png` | The preview card on Discord, X, Slack | 1200 x 630 PNG | Done (farm banner and logo) |
+| `img/footer-night.png` | The night scenery strip above the footer | 2280 x 240 | Done |
+
+Videos are MP4 (H.264, no sound) because they are many times smaller than GIFs. To make one from a recording, with [ffmpeg](https://ffmpeg.org):
+
+```
+ffmpeg -i recording.mp4 -t 15 -an -vf "scale=960:-2:flags=area,format=yuv420p" -c:v libx264 -crf 22 -movflags +faststart img/hero-farm.mp4
+ffmpeg -i recording.mp4 -frames:v 1 -vf "scale=960:-2:flags=area" img/hero-farm-poster.jpg
+```
+
+Use `flags=neighbor` and a whole-number size (2x, 3x) when scaling small pixel-art clips **up**.
 
 ## Email sign-up
 
-The form in `index.html` (`<form ... data-signup>`) has no provider yet. Until one is set, submitting it shows "Sign-ups open very soon". To connect a provider, set the form's `action` to the provider's form URL and rename the email field to the name the provider expects (`email`, `fields[email]`, etc.). Each provider's "embed form, HTML" snippet shows both.
+The form posts to Buttondown (newsletter `playtipusgame`) and opens Buttondown in a new tab. Buttondown handles CAPTCHA and sends the double opt-in confirmation email. Subscribers, the confirmation email text and newsletters are all managed at <https://buttondown.com>.
 
 ## Hosting
 

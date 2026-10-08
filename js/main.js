@@ -5,7 +5,17 @@ document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-// Email sign-up
+// Respect "reduce motion": stop the looping videos and let people play them by hand.
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.querySelectorAll("video[autoplay]").forEach((video) => {
+    video.removeAttribute("autoplay");
+    video.pause();
+    video.controls = true;
+  });
+}
+
+// Email sign-up (Buttondown). The form opens Buttondown in a new tab, which
+// handles CAPTCHA and sends the confirmation email.
 const form = document.querySelector("[data-signup]");
 const status = document.querySelector("[data-status]");
 
@@ -25,20 +35,7 @@ if (form && status) {
       return;
     }
 
-    // Spam trap filled in: quietly pretend it worked.
-    if (form.elements.website && form.elements.website.value) {
-      event.preventDefault();
-      say("Thanks! You're on the list.");
-      return;
-    }
-
-    // No email provider set yet (form action is empty).
-    if (!form.getAttribute("action")) {
-      event.preventDefault();
-      say("Sign-ups open very soon. Please check back!", true);
-      return;
-    }
-
-    // Otherwise the form posts to the provider as normal.
+    say("Almost there! Check your inbox and click the link to confirm.");
+    setTimeout(() => form.reset(), 0);
   });
 }
