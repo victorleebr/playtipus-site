@@ -10,7 +10,7 @@ js/main.js            sign-up form messages, footer year
 img/                  hero, feature images, share image
 fonts/                Pixelify Sans (pixel headings, OFL licence)
 favicon.ico, favicon-32.png, apple-touch-icon.png
-CNAME                 the custom domain for GitHub Pages (added back once DNS is set up)
+CNAME                 the custom domain for GitHub Pages
 ```
 
 ## Changing the text
