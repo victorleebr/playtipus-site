@@ -49,7 +49,7 @@ The form in `index.html` (`<form ... data-signup>`) has no provider yet. Until o
 
 ## Hosting
 
-GitHub Pages, from the `main` branch and the repository root, with the custom domain set in `CNAME`. DNS for `playtipusgame.com` is managed at the domain registrar:
+GitHub Pages, from the `main` branch and the repository root, with the custom domain set in `CNAME`. DNS for `playtipusgame.com` is managed at Cloudflare:
 
 | Type | Name | Value |
 |---|---|---|
@@ -62,5 +62,7 @@ GitHub Pages, from the `main` branch and the repository root, with the custom do
 | AAAA | @ | 2606:50c0:8002::153 |
 | AAAA | @ | 2606:50c0:8003::153 |
 | CNAME | www | victorleebr.github.io |
+
+DNS for the domain is on Cloudflare. Set all of these records to **DNS only** (grey cloud, not proxied), or GitHub can't issue the certificate.
 
 HTTPS is a free certificate from GitHub, turned on with "Enforce HTTPS" in the repository's Settings > Pages.
