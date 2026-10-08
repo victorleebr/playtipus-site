@@ -40,7 +40,7 @@ Pixel art rules: export at 1x game pixels, or a clean whole-number multiple. Nev
 | `img/feature-hatching.mp4` + poster | An egg hatching into a new hybrid (Hybrid breeding) | 494 x 562 | Done (from `egg_hatching_video.mp4`) |
 | `img/feature-family-tree.mp4` + poster | A pet's family tree and DNA helix (Family trees) | 858 x 602 | Done (from `family_tree_video.mp4`) |
 | `img/feature-farm-night.mp4` + poster | The farm at night, pets wandering | 956 x 222 | Done (from `chill_farm_video_night.mp4`) |
-| `img/feature-coats.gif` | A pet cycling through coats | **480 x 270**, 1x | Placeholder (coats aren't in the game yet) |
+| `img/feature-coats.png` | One pet in six coats, then six hybrids, in a 3-column grid | 708 x 672 | Done (from `Coat_Example1.png` and `Coat_Example_Hybrid.png`) |
 | `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` | The game icon | Send a **32 x 32** transparent PNG; **180 x 180** for the Apple icon | Temporary: a striped pet cropped from an expedition GIF |
 | `img/og-image.png` | The preview card on Discord, X, Slack | 1200 x 630 PNG | Done (farm banner and logo) |
 | `img/footer-day.mp4` + poster | The farm on a sunny day, full width above the footer (cropped to 440 px tall on wide screens) | 1280 x 586 | Done (from `chill_farm_video_day.mp4`, sidebar icons cropped off) |
