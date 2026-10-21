@@ -35,7 +35,7 @@ Pixel art rules: export at 1x game pixels, or a clean whole-number multiple. Nev
 | File | What it shows | Size | Status |
 |---|---|---|---|
 | `img/farm-day-night.mp4` + poster | The farm from day to sunset to night (A farm on your taskbar) | 1920 x 636 | Done (Oct 20, from `farm_transition_day_night.mp4`) |
-| `img/taskbar.mp4` + `taskbar-poster.jpg` | The real Windows taskbar with an expedition walking along it, full width under the hero | 1916 x 90 | Done (from `videoexpeditionaskbar.mp4`) |
+| `img/taskbar.mp4` + `taskbar-poster.jpg` | The real Windows taskbar with an expedition walking along it, full width under the hero | 1918 x 86 | Done (Oct 20, from `task_bar_gif.gif`) |
 | `img/feature-hatching.mp4` + poster | An egg hatching into a new hybrid (Hybrid breeding) | 502 x 556 | Done (Oct 20, from `hatching_egg_gif2.gif`) |
 | `img/feature-family-tree.mp4` + poster | A pet's family tab and DNA helix (Family trees) | 604 x 402 | Done (Oct 20, from `family_tab_gif.gif`) |
 | `img/taskbar-search.mp4` + poster | Full desktop: a "why platypus" search open while the expedition walks the taskbar (under the taskbar strip) | 1916 x 610 | Done (Oct 20, from `Expedition_TaskBar_Gif.gif`) |
