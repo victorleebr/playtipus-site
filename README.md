@@ -38,7 +38,7 @@ Pixel art rules: export at 1x game pixels, or a clean whole-number multiple. Nev
 | `img/taskbar.mp4` + `taskbar-poster.jpg` | The real Windows taskbar with an expedition walking along it, full width under the hero | 1918 x 86 | Done (Oct 20, from `task_bar_gif.gif`) |
 | `img/feature-hatching.mp4` + poster | An egg hatching into a new hybrid (Hybrid breeding) | 502 x 556 | Done (Oct 20, from `hatching_egg_gif2.gif`) |
 | `img/feature-family-tree.mp4` + poster | A pet's family tab and DNA helix (Family trees) | 604 x 402 | Done (Oct 20, from `family_tab_gif.gif`) |
-| `img/taskbar-search.mp4` + poster | Full desktop: a "why platypus" search open while the expedition walks the taskbar (under the taskbar strip) | 1916 x 610 | Done (Oct 20, from `Expedition_TaskBar_Gif.gif`) |
+| `img/taskbar-search.mp4` + poster | Full desktop: a "why platypus" search open while the expedition walks the taskbar (under the taskbar strip) | 1914 x 584 | Done (Oct 20, from `expedition_gif_taskbar_2.gif`) |
 | `img/feature-expeditions-2.mp4` + poster | Expedition finds in the Meadow | 1200 x 174 | Done (Oct 20, same source) |
 | `img/feature-boss.mp4` + poster | Boss fight in the Old Quarry, Cleared!, chest opens | 960 x 210 | Done (Oct 20, from `chest_B_3x.mp4`) |
 | `img/feature-shade.png` | Three platypuses: palest, middle, deepest shade | 920 x 220 | Done (Oct 20, from `shade2_species.png`) |
