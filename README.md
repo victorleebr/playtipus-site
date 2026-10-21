@@ -34,10 +34,10 @@ Pixel art rules: export at 1x game pixels, or a clean whole-number multiple. Nev
 
 | File | What it shows | Size | Status |
 |---|---|---|---|
-| `img/hero-farm.mp4` + `hero-farm-poster.jpg` | The farm, panning to the race track (15 s loop; now the "A farm on your taskbar" feature) | 960 x 404 | Done (from `full_farm_video_long.mp4`) |
-| `img/taskbar.mp4` + `taskbar-poster.jpg` | The real Windows taskbar with an expedition walking along it, full width under the hero | 1916 x 90 | Done (from `videoexpeditionaskbar.mp4`) |
-| `img/feature-hatching.mp4` + poster | An egg hatching into a new hybrid (Hybrid breeding) | 494 x 562 | Done (from `egg_hatching_video.mp4`) |
-| `img/feature-family-tree.mp4` + poster | A pet's family tree and DNA helix (Family trees) | 858 x 602 | Done (from `family_tree_video.mp4`) |
+| `img/farm-day-night.mp4` + poster | The farm from day to sunset to night (A farm on your taskbar) | 1920 x 636 | Done (Oct 20, from `farm_transition_day_night.mp4`) |
+| `img/taskbar.mp4` + `taskbar-poster.jpg` | The real Windows taskbar with an expedition walking along it, full width under the hero | 1916 x 104 | Done (Oct 20, from `Expedition_TaskBar_Gif.gif`) |
+| `img/feature-hatching.mp4` + poster | An egg hatching into a new hybrid (Hybrid breeding) | 502 x 556 | Done (Oct 20, from `hatching_egg_gif2.gif`) |
+| `img/feature-family-tree.mp4` + poster | A pet's family tab and DNA helix (Family trees) | 604 x 402 | Done (Oct 20, from `family_tab_gif.gif`) |
 | `img/hero-trip.mp4` + poster | Zoomed expedition: 3 pets walking the Meadow (3x game pixels, under the taskbar clip) | 1200 x 174 | Done (Oct 20, from run24 `trip2min_free_3x.mp4`) |
 | `img/feature-expeditions-2.mp4` + poster | Expedition finds in the Meadow | 1200 x 174 | Done (Oct 20, same source) |
 | `img/feature-boss.mp4` + poster | Boss fight, Cleared, loot chest | 960 x 210 | Done (Oct 20, game half of run24 `boss_win_side.mp4`) |
@@ -46,7 +46,7 @@ Pixel art rules: export at 1x game pixels, or a clean whole-number multiple. Nev
 | `img/wip-cards.mp4` + poster | Card battle (in the works) | 960 x 186 | Done (Oct 20, game half of fightvis `exchange_side_3x.mp4`) |
 | `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` | The game icon | Send a **32 x 32** transparent PNG; **180 x 180** for the Apple icon | Temporary: a striped pet cropped from an expedition GIF |
 | `img/og-image.png` | The preview card on Discord, X, Slack | 1200 x 630 PNG | Done (farm banner and logo) |
-| `img/footer-farm-day.mp4` + poster | The farm on a sunny day, full width above the footer | 1280 x 312 | Done (from `chill_farm_video_day_long_chopped.mp4`) |
+| `img/footer-farm-day.mp4` + poster | The whole farm on a sunny day, full width above the footer | 1918 x 630 | Done (Oct 20, from `Whole_Farm_Gif_day.gif`) |
 | `img/platypus-pet.mp4` + poster | A platypus being petted, shown small at the top of the sign-up box | 320 x 294 (shown at 200 px) | Done (from `gif_icon.mp4`) |
 
 Videos are MP4 (H.264, no sound) because they are many times smaller than GIFs. To make one from a recording, with [ffmpeg](https://ffmpeg.org):
