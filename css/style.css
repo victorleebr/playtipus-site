@@ -306,7 +306,8 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
 
 .privacy { font-size: .85rem; color: var(--ink-soft); margin: 16px 0 0 !important; }
 
-/* Wide band clips: on phones show them taller (centre crop) so the pets read */
-@media (max-width: 600px) {
-  .feature.wide video, .wip-card video { height: 120px; object-fit: cover; object-position: 40% 70%; }
+/* Phones: never crop a clip; show every video whole, scaled to the screen width */
+@media (max-width: 760px) {
+  .taskbar { height: auto; object-fit: contain; }
+  .feature video, .feature img, .wip-card video, .hero-shot video { height: auto; object-fit: contain; }
 }
