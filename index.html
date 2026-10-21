@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Playtipus: breed odd little pets on your Windows taskbar</title>
-  <meta name="description" content="Playtipus is a cozy pixel-art idle game that lives on your Windows taskbar. Breed hybrid pets with hidden genes, race and train them, and send them on expeditions.">
+  <meta name="description" content="Playtipus is a cozy pixel-art idle game that lives on your Windows taskbar. Breed hybrid pets with hidden genes, send them on expeditions past your open apps, and race them in the arena.">
   <link rel="canonical" href="https://playtipusgame.com/">
   <meta name="theme-color" content="#78a0c8">
 
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Playtipus">
   <meta property="og:url" content="https://playtipusgame.com/">
-  <meta property="og:title" content="Playtipus">
+  <meta property="og:title" content="Playtipus: breed odd little pets on your Windows taskbar">
   <meta property="og:description" content="Breed odd little hybrid pets on your Windows taskbar. A cozy pixel-art idle game.">
   <meta property="og:image" content="https://playtipusgame.com/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <link rel="preload" href="fonts/pixelify-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=4">
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -35,13 +35,6 @@
       <h1 class="logo">Playtipus</h1>
       <!-- EDIT: the one-line pitch -->
       <p class="pitch">Breed odd little hybrid pets on your Windows taskbar.</p>
-
-      <figure class="hero-shot frame">
-        <!-- EDIT: hero video. Replace img/hero-farm.mp4 and its poster (keep width/height in sync) -->
-        <video src="img/hero-farm.mp4" poster="img/hero-farm-poster.jpg" width="960" height="404"
-               autoplay muted loop playsinline preload="auto"
-               aria-label="The Playtipus farm at night: houses, a river, pets wandering, and the race track"></video>
-      </figure>
 
       <div class="cta">
         <a class="btn" href="#signup">Get notified</a>
@@ -56,6 +49,16 @@
     <video class="taskbar" src="img/taskbar.mp4" poster="img/taskbar-poster.jpg" width="1916" height="90"
            autoplay muted loop playsinline preload="auto"
            aria-label="A Windows taskbar with Playtipus pets walking along the top edge on an expedition"></video>
+
+    <div class="wrap">
+      <p class="taskbar-note">Up close, three of your pets on a trip to the Meadow:</p>
+      <figure class="hero-shot frame">
+        <!-- EDIT: zoomed expedition clip (3x game pixels). Replace img/hero-trip.mp4 and its poster -->
+        <video src="img/hero-trip.mp4" poster="img/hero-trip-poster.jpg" width="1200" height="174"
+               autoplay muted loop playsinline preload="auto"
+               aria-label="A fennec fox, a platypus and a hybrid walking through the Meadow, with rolling hills behind them"></video>
+      </figure>
+    </div>
   </header>
 
   <main>
@@ -83,33 +86,97 @@
       </article>
 
       <article class="feature">
-        <video src="img/feature-farm-night.mp4" poster="img/feature-farm-night-poster.jpg" width="956" height="222"
+        <video src="img/hero-farm.mp4" poster="img/hero-farm-poster.jpg" width="960" height="404"
                autoplay muted loop playsinline preload="metadata"
-               aria-label="The farm at night: pets wandering under the moon, with a windmill and the race track"></video>
+               aria-label="The Playtipus farm at night: houses, a river, pets wandering, and the race track"></video>
         <div class="feature-text">
           <h3>A farm on your taskbar</h3>
-          <p>Playtipus docks along the bottom of your screen while you work. Pets wander, sleep and get up to things. Peek in whenever you like, or just let them be.</p>
+          <p>Playtipus docks along the bottom of your screen while you work. Pets wander, sleep and get up to things. Peek in whenever you like, tuck it behind your other windows, or just let them be.</p>
         </div>
       </article>
 
-      <article class="feature">
-        <video src="img/feature-expeditions.mp4" poster="img/feature-expeditions-poster.png" width="516" height="348"
+      <article class="feature wide">
+        <video src="img/feature-expeditions-2.mp4" poster="img/feature-expeditions-2-poster.jpg" width="1200" height="174"
                autoplay muted loop playsinline preload="metadata"
-               aria-label="A pet on an expedition walking along the taskbar, just above the Windows search box"></video>
+               aria-label="Three pets walking through the Meadow and picking up finds along the way"></video>
         <div class="feature-text">
           <h3>Expeditions</h3>
-          <p>Pick a party and send them off along the taskbar, right past your open apps. Keep working; they'll keep walking.</p>
+          <p>Pick a party of three and send them along your taskbar to the Meadow, the Old Quarry or the Riverbank. They hop logs, wade through puddles, cross streams, dig up finds and camp by the fire on long trips. Keep working; they'll keep walking.</p>
+        </div>
+      </article>
+
+      <article class="feature wide">
+        <video src="img/feature-boss.mp4" poster="img/feature-boss-poster.jpg" width="960" height="210"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="A party facing a red Wild Fennec Fox boss in the Meadow, then a Cleared banner and a loot chest"></video>
+        <div class="feature-text">
+          <h3>Bosses and loot</h3>
+          <p>Some trips end with a local creature that won't move out of the way: a Wild, Angry or even Mighty one. Beat it and your party heads home with a chest. The rarest chests are very rare.</p>
         </div>
       </article>
 
       <article class="feature">
-        <img src="img/feature-coats.png" width="708" height="672" loading="lazy"
-             alt="Twelve pets: the same pink pet in six different coat patterns, then six hybrids with mixed coats">
+        <video src="img/feature-shade.mp4" poster="img/feature-shade-poster.jpg" width="1152" height="360"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="A fennec fox, a honey badger and a platypus, each in Pale, Pure Pale and Perfect Pale and in Deep, Pure Deep and Perfect Deep shades, with a shine sweeping across the Perfect ones"></video>
         <div class="feature-text">
-          <h3>Coats</h3>
-          <p>Patterns, colours and the occasional ridiculous pair of stripes. Breed for the look you want, then show them off.</p>
+          <h3>Rare looks</h3>
+          <p>Every pet carries a hidden shade gene. Breed toward the palest or deepest end of a line and you reach Pure and Perfect shades, which shine. Getting there takes patience, and that's the point.</p>
         </div>
       </article>
+
+      <article class="feature">
+        <img class="panel-shot" src="img/feature-music.png" width="1420" height="1300" loading="lazy"
+             alt="The in-game music player: a lofi playlist with shuffle, volume, and a folder for your own music">
+        <div class="feature-text">
+          <h3>Music while you work</h3>
+          <p>A built-in lofi player with its own playlist, shuffle and volume, and a folder where you can drop your own music. Leave the farm running and let it keep you company.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="wip wrap" aria-labelledby="wip-title">
+      <h2 id="wip-title">In the works</h2>
+      <div class="wip-grid">
+        <article class="wip-card">
+          <video src="img/wip-cards.mp4" poster="img/wip-cards-poster.jpg" width="960" height="186"
+                 autoplay muted loop playsinline preload="metadata"
+                 aria-label="A card battle: a saiga and a honey badger trade attacks while their support pets wait behind them"></video>
+          <h3>Card battles</h3>
+          <p>Every body part becomes a card. Breed a better head, get a better move. Your support pets step in at the right moment with a heal, a shield or a block.</p>
+        </article>
+        <article class="wip-card">
+          <h3>Arenas</h3>
+          <p>Run, Swim and Fight ladders with rivals, bosses every ten stages and a podium at the end.</p>
+          <h3>Steam page</h3>
+          <p>Coming once the friends playtest is done. Sign up below and we'll tell you the day it goes up.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq wrap" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions</h2>
+      <details>
+        <summary>What do I need to play?</summary>
+        <p>A Windows PC. Playtipus runs in a slim window docked along your taskbar, and you can make it taller when you want a closer look.</p>
+      </details>
+      <details>
+        <summary>When does it come out?</summary>
+        <p>There's no date yet. First a small playtest with friends, then the Steam page and wishlists, then early access. The newsletter is the first place we'll announce each step.</p>
+      </details>
+      <details>
+        <summary>How much will it cost?</summary>
+        <p>The price isn't set yet. We'll share it with the Steam page.</p>
+      </details>
+      <details>
+        <summary>Will it slow my computer down?</summary>
+        <p>It shouldn't. It's built to run all day in the background, and every update is checked against a CPU and memory budget before it ships.</p>
+      </details>
+      <details>
+        <summary>Do my pets keep going when I close it?</summary>
+        <p>Yes. Your farm keeps ticking while you're away, and your pets will have been busy when you come back.</p>
+      </details>
     </section>
 
     <section id="signup" class="signup-section" aria-labelledby="signup-title">
@@ -130,6 +197,7 @@
           <button class="btn" type="submit">Notify me</button>
         </form>
         <p class="form-status" role="status" aria-live="polite" data-status></p>
+        <p class="privacy">Your email is stored with Buttondown and used only for Playtipus news. Every email has an unsubscribe link.</p>
 
         <a class="btn btn-steam" data-steam href="#" hidden>Wishlist on Steam</a>
       </div>

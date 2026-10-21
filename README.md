@@ -34,13 +34,16 @@ Pixel art rules: export at 1x game pixels, or a clean whole-number multiple. Nev
 
 | File | What it shows | Size | Status |
 |---|---|---|---|
-| `img/hero-farm.mp4` + `hero-farm-poster.jpg` | The farm, panning to the race track (15 s loop) | 960 x 404 | Done (from `full_farm_video_long.mp4`) |
+| `img/hero-farm.mp4` + `hero-farm-poster.jpg` | The farm, panning to the race track (15 s loop; now the "A farm on your taskbar" feature) | 960 x 404 | Done (from `full_farm_video_long.mp4`) |
 | `img/taskbar.mp4` + `taskbar-poster.jpg` | The real Windows taskbar with an expedition walking along it, full width under the hero | 1916 x 90 | Done (from `videoexpeditionaskbar.mp4`) |
-| `img/feature-expeditions.mp4` + poster | Close-up of a pet walking above the search box | 516 x 348 (3x) | Done (from `walking_expedition.mp4`) |
 | `img/feature-hatching.mp4` + poster | An egg hatching into a new hybrid (Hybrid breeding) | 494 x 562 | Done (from `egg_hatching_video.mp4`) |
 | `img/feature-family-tree.mp4` + poster | A pet's family tree and DNA helix (Family trees) | 858 x 602 | Done (from `family_tree_video.mp4`) |
-| `img/feature-farm-night.mp4` + poster | The farm at night, pets wandering | 956 x 222 | Done (from `chill_farm_video_night.mp4`) |
-| `img/feature-coats.png` | One pet in six coats, then six hybrids, in a 3-column grid | 708 x 672 | Done (from `Coat_Example1.png` and `Coat_Example_Hybrid.png`) |
+| `img/hero-trip.mp4` + poster | Zoomed expedition: 3 pets walking the Meadow (3x game pixels, under the taskbar clip) | 1200 x 174 | Done (Oct 20, from run24 `trip2min_free_3x.mp4`) |
+| `img/feature-expeditions-2.mp4` + poster | Expedition finds in the Meadow | 1200 x 174 | Done (Oct 20, same source) |
+| `img/feature-boss.mp4` + poster | Boss fight, Cleared, loot chest | 960 x 210 | Done (Oct 20, game half of run24 `boss_win_side.mp4`) |
+| `img/feature-shade.mp4` + poster | Shade tiers Pale / Pure / Perfect and Deep, with the shine | 1152 x 360 | Done (Oct 20, from `shade2_effects.gif`) |
+| `img/feature-music.png` | The in-game music player | 1420 x 1300 (shown at 380 px) | Done (Oct 20, from run17 `music_panel.mp4`) |
+| `img/wip-cards.mp4` + poster | Card battle (in the works) | 960 x 186 | Done (Oct 20, game half of fightvis `exchange_side_3x.mp4`) |
 | `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png` | The game icon | Send a **32 x 32** transparent PNG; **180 x 180** for the Apple icon | Temporary: a striped pet cropped from an expedition GIF |
 | `img/og-image.png` | The preview card on Discord, X, Slack | 1200 x 630 PNG | Done (farm banner and logo) |
 | `img/footer-farm-day.mp4` + poster | The farm on a sunny day, full width above the footer | 1280 x 312 | Done (from `chill_farm_video_day_long_chopped.mp4`) |
