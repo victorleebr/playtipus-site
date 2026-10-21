@@ -308,6 +308,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible {
 
 /* Phones: never crop a clip; show every video whole, scaled to the screen width */
 @media (max-width: 760px) {
-  .taskbar { height: auto; object-fit: contain; }
+  /* the taskbar strip: crop its ends to the pets (they walk around the middle 460 px of the recording) */
+  .taskbar { height: calc(100vw * 86 / 460); object-fit: cover; object-position: 50% 50%; }
   .feature video, .feature img, .wip-card video, .hero-shot video { height: auto; object-fit: contain; }
 }
