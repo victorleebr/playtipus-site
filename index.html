@@ -912,8 +912,8 @@ function measure() {
   // T: one full turn. wF / wB: the strand at the front and at the back of a turn. rw: a rung. rail / stub: an unzipped strand and its bases.
   // T: one full turn. per: rungs in a turn. wF / wB: a strand at the front and at the back of a turn. rw: a rung.
   // rail / stub: an unzipped strand and its bases. tilt: how far the helix leans towards you (a share of its radius).
-  S = phone ? { T: 184, per: 8, wF: 10, wB: 5, rw: 5, rail: 5, stub: 5, amp: 46, step: 3, wob: 1, tilt: .24 }
-            : { T: 290, per: 10, wF: 16, wB: 8, rw: 7, rail: 9, stub: 17, amp: 82, step: 4, wob: 2.5, tilt: .3 };
+  S = phone ? { T: 184, per: 8, wF: 10, wB: 5, rw: 5, rail: 5, stub: 5, amp: 46, step: 3, wob: 1, tilt: 0 }
+            : { T: 290, per: 10, wF: 16, wB: 8, rw: 7, rail: 9, stub: 17, amp: 82, step: 4, wob: 2.5, tilt: 0 };
   zones = $$('[data-hx]').map(el => {
     const r = el.getBoundingClientRect(), open = el.dataset.hx === '1';
     let l = r.left, rt = r.right;
@@ -1040,7 +1040,7 @@ function draw(time) {
 
   // 3. everything behind: the back half of each turn and its beads
   strands(false);
-  for (const q of RUNGS) { bead(q.xa, q.ya, 1, q, C.A, false); bead(q.xb, q.yb, -1, q, C.B, false); }
+  // (no beads: the shading shows the spin; Victor 2026-11-23)
 
   // 4. the rungs: bars that swing round. Full length and bright when they face you, short and dark when they turn edge on;
   //    the half that points away from you is dimmer and thinner. Unzipping pops the two halves apart.
@@ -1081,7 +1081,7 @@ function draw(time) {
 
   // 5. everything in front: the near half of each turn passes over the rungs and over the back strand, then its beads
   strands(true);
-  for (const q of RUNGS) { bead(q.xa, q.ya, 1, q, C.A, true); bead(q.xb, q.yb, -1, q, C.B, true); }
+  // (no beads)
 
   // 6. the bits that fly off when a rung pops
   for (let i = parts.length - 1; i >= 0; i--) {
