@@ -922,7 +922,10 @@ function measure() {
       l = Math.max(phone ? 4 : 10, r.left + pad - (phone ? 12 : 38));
       rt = Math.min(VW - (phone ? 4 : 10), r.right - pad + (phone ? 12 : 38));
     }
-    return { el, top: r.top + sy, bottom: r.bottom + sy, axis: (l + rt) / 2, half: (rt - l) / 2, open: open ? 1 : 0,
+    // desktop: the hero's closed helix runs straight down to the end of the hero, so the turn towards the first section
+    // happens below the first screen (Victor 2026-11-23: the slanted stretch looked glitchy)
+    const bottom = !phone && el.classList.contains('hero-helix') ? $('header.hero').getBoundingClientRect().bottom + sy : r.bottom + sy;
+    return { el, top: r.top + sy, bottom, axis: (l + rt) / 2, half: (rt - l) / 2, open: open ? 1 : 0,
              amp: open ? S.amp : r.width / 2 - S.wF / 2, r: +el.dataset.r || 0 };
   }).sort((p, q) => p.top - q.top);
   blocks = $$('.uz').map(el => ({ el, top: el.getBoundingClientRect().top + sy, o: -1, forced: (blocks.find(b => b.el === el) || {}).forced }));
