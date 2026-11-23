@@ -667,7 +667,7 @@ header,main,footer{position:relative;z-index:1}
   </div>
 </footer>
 
-<button class="helicase" id="helicase" type="button"><canvas width="17" height="14" aria-hidden="true"></canvas><span class="hint">Click me to unzip</span><span class="pp" aria-hidden="true">Pair 01 / 26</span></button>
+<button class="helicase" id="helicase" type="button"><canvas width="17" height="14" aria-hidden="true"></canvas><span class="hint">Click the helicase to unzip</span><span class="pp" aria-hidden="true">Pair 01 / 26</span></button>
 <div class="pair" id="pair" aria-hidden="true"><i></i><span>Pair 01 / 26</span></div>
 
 <script>
@@ -1107,7 +1107,7 @@ function place(sy) {
   curStop = k;
   const s = stops[Math.min(k, stops.length - 1)];
   heli.style.transform = `translate(${Math.round(s.x)}px,${Math.round(s.y)}px)`;
-  heliHint.textContent = k === 0 ? 'Click me to unzip' : k >= secTops.length ? 'Zip it all back up' : 'Unzip the next gene';
+  heliHint.textContent = k === 0 ? 'Click the helicase to unzip' : k >= secTops.length ? 'Zip it all back up' : 'Unzip the next gene';
 }
 heli.addEventListener('click', () => {
   heli.classList.remove('chomp'); void heli.offsetWidth; heli.classList.add('chomp');
