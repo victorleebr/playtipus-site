@@ -127,6 +127,11 @@ header,main,footer{position:relative;z-index:1}
 .w-a{background-image:url("img/walk_a.png")}.w-b{background-image:url("img/walk_b.png")}
 .w-c{background-image:url("img/walk_c.png")}.w-d{background-image:url("img/walk_d.png")}
 .w-legend{background-image:url("img/legend.png")}
+.w-e{background-image:url("img/walk_e.png")}.w-h{background-image:url("img/walk_h.png")}
+.w-i{background-image:url("img/walk_i.png")}.w-j{background-image:url("img/walk_j.png")}
+.w-lax{background-image:url("img/legend_axolotl.png")}
+.walker.n12{--n:12;animation-timing-function:steps(12);animation-duration:1.03s}
+.walker.n20{--n:20;animation-timing-function:steps(20);animation-duration:1.72s}
 @keyframes walk{to{background-position-x:calc(-57px*var(--s)*var(--n))}}
 .still .walker,.still .spark i,.still .helicase canvas{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.walker{animation:none}}
@@ -266,7 +271,8 @@ header,main,footer{position:relative;z-index:1}
 .pets-row{display:grid;grid-template-columns:repeat(2,1fr);justify-items:center;align-items:end;gap:6px 0;padding:10px 12px 12px;background:var(--surface);
   border:var(--edge) solid var(--line);box-shadow:6px 6px 0 var(--shadow)}
 .pets-row .pet,.pets-row .walker{--s:2}
-@media (min-width:600px){.pets-row{grid-template-columns:repeat(4,1fr)}}
+.lineup>div{container-type:inline-size}                        /* 4 across only when the box really has room for 4 */
+@container (min-width:500px){.pets-row{grid-template-columns:repeat(4,1fr)}}
 .total{margin-top:22px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
 .total b{font:700 clamp(2.2rem,8vw,3.6rem)/1 var(--pixel);font-variant-numeric:tabular-nums}
 .total span{font-weight:700}
@@ -345,8 +351,16 @@ header,main,footer{position:relative;z-index:1}
 /* ---------- join + footer ---------- */
 .join{text-align:center;justify-items:center}
 .join .cta{justify-content:center}
-.join .walker{--s:3;margin:0 auto 10px}
-@media (min-width:900px){.join .walker{--s:4}}
+.join .walker{--s:2}
+.tier{display:flex;align-items:center;justify-content:center;gap:clamp(8px,3vw,22px);margin:0 auto 6px}
+.tier-arrow{width:clamp(22px,6vw,34px);height:auto;color:var(--gold);flex:none}
+.mystery{flex:none;display:grid;place-items:center;width:calc(57px*2);height:calc(47px*2);border:var(--edge) dashed var(--rc);
+  color:var(--rc);font:400 clamp(1.4rem,5vw,2rem)/1 var(--pixel);animation:myst 1.6s steps(2) infinite}
+@keyframes myst{50%{opacity:.55}}
+.still .mystery{animation-play-state:paused}
+.tier-cap{font-size:.95rem;color:var(--muted);margin:0 0 14px}.tier-cap b{color:var(--rc)}
+@media (min-width:900px){.join .walker{--s:3}.mystery{width:calc(57px*3);height:calc(47px*3)}}
+@media (prefers-reduced-motion:reduce){.mystery{animation:none}}
 .note{font-size:.9rem;color:var(--muted);margin-top:16px}
 .note.is-error{color:#c0392b}
 .signup{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;width:100%;max-width:520px;margin:24px auto 0}
@@ -463,10 +477,10 @@ header,main,footer{position:relative;z-index:1}
           <div>
             <p class="row-label">Pure-Breds: Good</p>
             <div class="pets-row">
-              <span class="pet pure" style="--c:0" role="img" aria-label="Platypus"></span>
-              <span class="pet pure" style="--c:1" role="img" aria-label="Fennec fox"></span>
-              <span class="pet pure" style="--c:2" role="img" aria-label="Honey badger"></span>
-              <span class="pet pure" style="--c:3" role="img" aria-label="Axolotl"></span>
+              <span class="walker w-c" role="img" aria-label="A pure-bred platypus, walking"></span>
+              <span class="walker w-i n12" role="img" aria-label="A pure-bred fennec fox, walking"></span>
+              <span class="walker w-j n10" role="img" aria-label="A pure-bred honey badger, walking"></span>
+              <span class="walker w-h n10" role="img" aria-label="A pure-bred axolotl, walking"></span>
             </div>
           </div>
           <div>
@@ -475,7 +489,7 @@ header,main,footer{position:relative;z-index:1}
               <span class="walker w-a" role="img" aria-label="A hybrid with a fennec head, platypus body, saiga legs and axolotl gills, walking"></span>
               <span class="walker w-b n10" role="img" aria-label="A hybrid with an axolotl head on a honey badger body with saiga horns, walking"></span>
               <span class="walker w-d n10" role="img" aria-label="A hybrid with a saiga head on an axolotl body with fennec ears, walking"></span>
-              <span class="pet" style="--c:5;--r:16" role="img" aria-label="A fennec fox head on a platypus body with an axolotl tail and gills"></span>
+              <span class="walker w-e" role="img" aria-label="A hybrid with a fennec fox head on a platypus body with an axolotl tail and gills, walking"></span>
             </div>
           </div>
         </div>
@@ -492,16 +506,16 @@ header,main,footer{position:relative;z-index:1}
           <p class="tag" data-r="3"><i></i>Gene 03 · Card Fights</p>
           <h2 id="h-fights">Your Pet Is Your Deck</h2>
           <p class="lede">Swap a tail and you swap a card. The pet you breed is the deck you fight with, so the real skill is in the egg.</p>
-          <!-- THE PARTS LIST. One row per part. If the legs are split into front and back legs (two parts), replace the
-               Legs row with two rows: "Front Legs: 1 card" and "Hind Legs: 1 card". -->
+          <!-- THE PARTS LIST. One row per part: 6 parts, 6 cards. -->
           <ul class="deck">
             <li data-r="1">Head<span>1 card</span></li>
-            <li data-r="0">Legs<span>2 cards: a front-leg card and a hind-leg card</span></li>
+            <li data-r="0">Front Legs<span>1 card</span></li>
+            <li data-r="0">Back Legs<span>1 card</span></li>
             <li data-r="2">Tail<span>1 card</span></li>
             <li data-r="0">Body<span>The species, its HP, and the Basic attack card</span></li>
-            <li data-r="3">Special<span>The Ultimate, when its meter fills</span></li>
+            <li data-r="3">Special<span>The Ultimate card, when its meter fills</span></li>
           </ul>
-          <p class="lede muted">Two copies of the head, leg and tail cards make an 8-card deck. The Basic attack is always there.</p>
+          <p class="lede muted">Six parts, six cards. Two copies each of the head, front-leg, back-leg and tail cards make an 8-card deck; the Basic is always there, and the Ultimate waits for its meter.</p>
           
         </div>
         <!-- SWAP: captured offscreen from the game (branch run105, 2026-11-22). Replace media/game_fight.mp4 (1280 x 690) when the fight UI is final. -->
@@ -602,7 +616,6 @@ header,main,footer{position:relative;z-index:1}
       <div class="uz">
         <ul class="reel" id="reel" tabindex="0" aria-label="Clips from the latest devlog. Scroll sideways for more.">
           <li><span class="ph">Early build</span><video data-auto src="media/02_cutin_venom_spur.mp4" poster="media/02_cutin_venom_spur.jpg" width="960" height="236" muted loop playsinline preload="none" aria-label="The platypus’s Venomous Spur special, shown as a cut-in"></video></li>
-          <li><video data-auto src="media/12_lake_race.mp4" poster="media/12_lake_race.jpg" width="960" height="394" muted loop playsinline preload="none" aria-label="Pets racing across the lake"></video></li>
           <li><video data-auto src="media/05_pet_turn_views.mp4" poster="media/05_pet_turn_views.jpg" width="264" height="294" muted loop playsinline preload="none" aria-label="A pet turning on the spot through all its views"></video></li>
           <li><span class="ph">Early build</span><video data-auto src="media/03_cutin_axolotl.mp4" poster="media/03_cutin_axolotl.jpg" width="960" height="236" muted loop playsinline preload="none" aria-label="The axolotl’s special, shown as a cut-in"></video></li>
           <li><video data-auto src="media/07_dr_viktor.mp4" poster="media/07_dr_viktor.jpg" width="1024" height="384" muted loop playsinline preload="none" aria-label="Dr. Viktor, the platypus scientist"></video></li>
@@ -639,7 +652,12 @@ header,main,footer{position:relative;z-index:1}
   <section class="gene" id="join" aria-labelledby="h-join" tabindex="-1">
     <div class="wrap join" data-hx="1" data-r="3">
       <div class="uz">
-        <span class="walker w-legend n24" role="img" aria-label="A Legendary hybrid: platypus head, fennec fox body, saiga legs, an axolotl fin tail and the axolotl’s gills as its Special, glowing aqua and mint at the tips"></span>
+        <div class="tier" role="img" aria-label="A Legendary axolotl, its gills and fin tail glowing aqua and mint, then an arrow to a mystery box: Mythical, coming soon">
+          <span class="walker w-lax n20"></span>
+          <svg class="tier-arrow" viewBox="0 0 10 10" aria-hidden="true"><path fill="currentColor" d="M0 4h6v2H0zM5 2h2v2H5zM7 4h2v2H7zM5 6h2v2H5z"/></svg>
+          <span class="mystery" data-r="4">???</span>
+        </div>
+        <p class="tier-cap">Legendary today. <b data-r="4">Mythical</b> is coming.</p>
         <p class="tag" data-r="3"><i></i>Gene 08 · Legendary</p>
         <h2 id="h-join">Hear When It Hatches</h2>
         <p class="lede" style="margin-inline:auto">Playtests, the Steam page and launch day. A letter when there’s news, and nothing in between.</p>
