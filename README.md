@@ -1,5 +1,7 @@
 # playtipus-site
 
+**Since 2026-11-23 the live page is "Concept B, Living helix"** (`index.html`: one self-contained page, CSS and JS inline; its pictures in `img/` and clips in `media/`). The old page is kept as `classic.html` (not linked), and the sections below describe it. Clips marked `SWAP` in `index.html` are slots for newer recordings: replace the file, keep the name. The newsletter form posts to Buttondown as before.
+
 The one-page website for **Playtipus** at <https://playtipusgame.com>.
 It is plain HTML, CSS and a little JavaScript, with no build step. GitHub Pages hosts it straight from the `main` branch, and every push to `main` goes live within a minute or two.
 
