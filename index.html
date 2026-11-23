@@ -240,6 +240,11 @@ header,main,footer{position:relative;z-index:1}
 .hatch{display:grid;justify-items:center;gap:10px;margin-top:16px;position:relative}
 .child{--s:3}
 .child.pop{animation:pop .3s steps(3)}
+.child.lg{background-image:url("img/genes_legend.png");background-size:calc(912px*var(--s)) calc(6016px*var(--s));
+  background-position:calc(-57px*var(--s)*var(--lc)) calc(-47px*var(--s)*var(--lr));animation:lgf 1.2s steps(8) infinite}
+.child.lg.pop{animation:pop .3s steps(3),lgf 1.2s steps(8) infinite}
+@keyframes lgf{to{background-position-x:calc(-57px*var(--s)*(var(--lc) + 8))}}
+.still .child.lg{animation-play-state:paused}
 @keyframes pop{0%{transform:scale(.8)}60%{transform:scale(1.08)}}
 .spark{position:absolute;left:50%;top:0;width:0;height:0;pointer-events:none}
 .spark i{position:absolute;width:6px;height:6px;background:var(--gold);opacity:0}
@@ -250,7 +255,7 @@ header,main,footer{position:relative;z-index:1}
 .spark i:nth-child(5){--x:70px;--y:-10px;animation-delay:.2s!important}.spark i:nth-child(6){--x:100px;--y:18px;animation-delay:.12s!important}
 @keyframes spark{0%{opacity:0;transform:translate(calc(var(--x)*.4),calc(var(--y) + 60px))}30%{opacity:1}
   100%{opacity:0;transform:translate(var(--x),var(--y))}}
-@media (prefers-reduced-motion:reduce){.child.pop{animation:none}.spark.go i{animation:none;opacity:1;transform:translate(var(--x),calc(var(--y) + 20px))}}
+@media (prefers-reduced-motion:reduce){.child.pop,.child.lg{animation:none}.spark.go i{animation:none;opacity:1;transform:translate(var(--x),calc(var(--y) + 20px))}}
 .verdict{font-weight:600;text-align:center;min-height:3.2em;font-variant-numeric:tabular-nums}
 .verdict em{font-style:normal;font-weight:800;color:var(--b-name)}
 @media (min-width:900px){.bench{padding:22px 24px 24px}.parents .pet{--s:3}.child{--s:4}.rung button{font-size:1rem}}
@@ -258,10 +263,10 @@ header,main,footer{position:relative;z-index:1}
 /* ---------- hybrids + the numbers ---------- */
 .lineup{display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
 .row-label{font:800 1rem var(--body);margin-bottom:6px}
-.pets-row{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;align-items:end;gap:6px 0;padding:10px 12px 12px;background:var(--surface);
+.pets-row{display:grid;grid-template-columns:repeat(2,1fr);justify-items:center;align-items:end;gap:6px 0;padding:10px 12px 12px;background:var(--surface);
   border:var(--edge) solid var(--line);box-shadow:6px 6px 0 var(--shadow)}
 .pets-row .pet,.pets-row .walker{--s:2}
-@media (min-width:900px){.pets-row{grid-template-columns:repeat(5,1fr)}}
+@media (min-width:600px){.pets-row{grid-template-columns:repeat(4,1fr)}}
 .total{margin-top:22px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
 .total b{font:700 clamp(2.2rem,8vw,3.6rem)/1 var(--pixel);font-variant-numeric:tabular-nums}
 .total span{font-weight:700}
@@ -356,7 +361,7 @@ header,main,footer{position:relative;z-index:1}
 .foot .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center}
 .foot a{color:inherit;padding:12px 0;display:inline-block}
 /* very narrow phones */
-@media (max-width:359px){.pets-row{grid-template-columns:repeat(2,1fr)}.bench{padding:14px 4px 16px}.parents{gap:0}.mode{grid-template-columns:minmax(0,1fr)}.mode .shot{border-right:0;border-bottom:var(--edge) solid var(--line);min-height:120px}}
+@media (max-width:359px){.bench{padding:14px 4px 16px}.parents{gap:0}.mode{grid-template-columns:minmax(0,1fr)}.mode .shot{border-right:0;border-bottom:var(--edge) solid var(--line);min-height:120px}}
 </style>
 </head>
 <body>
@@ -413,7 +418,7 @@ header,main,footer{position:relative;z-index:1}
           <p class="tag" data-r="1"><i></i>Gene 01 · Breeding</p>
           <h2 id="h-breeding">Five Parts, Two Parents</h2>
           <p class="lede">Head, body, legs, tail and a Special. A baby takes each part from one parent, a coin flip every time, then rolls that part’s rarity.</p>
-          <p class="lede muted">Now and then a hidden gene from a grandparent wakes up instead: here, a Fennec Fox or a Saiga. That’s a mutation. Click a side of a rung to choose yourself, or let the egg decide.</p>
+          <p class="lede muted">Now and then a hidden gene from a grandparent wakes up instead: here, a Fennec Fox or a Saiga. That’s not a mutation, it’s heredity: every part also carries the genes of the parents, grandparents and great-grandparents behind it. Click a side of a rung to choose yourself, or let the egg decide.</p>
           <div class="cta">
             <button class="btn" type="button" id="breed">Breed Again</button>
           </div>
@@ -758,8 +763,8 @@ const SPECIES = ['Platypus', 'Axolotl', 'Fennec Fox', 'Saiga'];   // 2 and 3 onl
 const PARTS = ['Head', 'Body', 'Legs', 'Tail', 'Special'];
 const SPECIAL = ['Spur', 'Gills', 'Ears', 'Horns'];
 const RARITY = ['Common', 'Rare', 'Epic', 'Legendary'];
-const PARENT_R = [[1, 0, 2, 0, 3], [2, 1, 0, 1, 0]];            // each parent's part rarities
-let genes = [1, 0, 0, 0, 1], rar = genes.map((g, i) => PARENT_R[g][i]);
+const PARENT_R = [[1, 0, 2, 0, 0], [2, 1, 0, 1, 3]];            // each parent's part rarities
+let genes = [0, 1, 1, 0, 1], rar = genes.map((g, i) => PARENT_R[g][i]);
 const rungsEl = $('#rungs'), child = $('#child'), verdict = $('#verdict'), spark = $('#spark');
 
 rungsEl.innerHTML = PARTS.map((p, i) => `
@@ -774,6 +779,10 @@ function show(announce) {
   const idx = genes.reduce((a, g) => a * 4 + g, 0);            // head, body, legs, tail, special in base 4
   child.style.setProperty('--c', idx % 32);
   child.style.setProperty('--r', Math.floor(idx / 32));
+  const lg = genes[4] === 1 && rar[4] === 3, j = idx >> 2;      // Legendary gills: the animated sheet (img/genes_legend.png, 8 frames a pet)
+  child.classList.toggle('lg', lg);
+  child.style.setProperty('--lc', (j & 1) * 8);
+  child.style.setProperty('--lr', j >> 1);
   const count = [0, 0, 0, 0];
   rungs.forEach((li, i) => {
     const g = genes[i]; count[g]++;
