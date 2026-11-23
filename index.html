@@ -1003,8 +1003,21 @@ function draw(time) {
 
   // A strand is a tube. In front it is thick, has an ink edge and a highlight line; behind it is thin, dim and sunk into the page.
   const tube = (X, Y, sign, R, front, layer) => {
+    const zOf = i => { const o = OO[i]; return o > .6 ? .35 : sign * (CC[i] + CC[i + 1]) / 2 * (1 - o) + .35 * o; };
+    if (layer === 0) {   // the ink edge: one path per unbroken run, ends cut flat, so no ring shows where the strand passes from back to front
+      ctx.lineCap = 'butt'; ctx.strokeStyle = C.line;
+      let run = false;
+      for (let i = 0; i < n - 1; i++) {
+        const on = (zOf(i) >= 0) === front;
+        if (on && !run) { ctx.beginPath(); ctx.lineWidth = lerp(S.wF, S.rail, OO[i]) + 4; ctx.moveTo(X[i], Y[i]); run = true; }
+        if (on) ctx.lineTo(X[i + 1], Y[i + 1]);
+        if (run && (!on || i === n - 2)) { ctx.stroke(); run = false; }
+      }
+      ctx.lineCap = 'round';
+      return;
+    }
     for (let i = 0; i < n - 1; i++) {
-      const o = OO[i], z = o > .6 ? .35 : sign * (CC[i] + CC[i + 1]) / 2 * (1 - o) + .35 * o;
+      const o = OO[i], z = zOf(i);
       if ((z >= 0) !== front) continue;
       const wd = lerp(S.wF, S.rail, o);                          // one tube, the same all round: only the light shows the turn (Victor 2026-11-23)
       const li = Math.round(litOf(sign, SS[i], CC[i], o) * (N - 1));
@@ -1015,7 +1028,7 @@ function draw(time) {
       ctx.stroke();
     }
   };
-  const strands = front => { for (let layer = 0; layer < 3; layer++) { tube(XA, YA, 1, C.A, front, layer); tube(XB, YB, -1, C.B, front, layer); } };
+  const strands = front => { for (let layer = 0; layer < 3; layer++) { tube(XA, YA, 1, C.A, front, layer); tube(XB, YB, -1, C.B, front, layer); } ctx.lineCap = 'round'; };
   // a bead where a rung joins a strand: it stays at its own height and goes round, and its glint stays at the upper left
   const bead = (x, y, sign, q, R, front) => {
     const z = q.o > .6 ? .35 : sign * q.c * (1 - q.o) + .35 * q.o;
